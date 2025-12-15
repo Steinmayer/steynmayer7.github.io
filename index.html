@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарифный план - Лабораторная 7</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">Lab 7</div>
+        <nav class="main-nav">
+            <!-- Dropdown for Manual View Switching -->
+            <label for="view-select" class="view-select-label">Вид:</label>
+            <select id="view-select">
+                <option value="auto">Авто</option>
+                <option value="desktop">Desktop</option>
+                <option value="mobile">Mobile</option>
+            </select>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="pricing-section">
+            <h1 class="pricing-title">Ценообразование</h1>
+            <p class="pricing-subtitle">Наши доступные цены масштабируются вместе с вашим бизнесом. Мы не запираем наши
+                функции в дорогих планах. Вы получаете все функции в каждом плане.</p>
+
+            <div class="pricing-card" id="pricing-card">
+                <!-- Left/Top Dark Panel -->
+                <div class="card-panel dark-panel">
+                    <h2 class="panel-title">Сколько у вас подписчиков на рассылку по электронной почте?</h2>
+
+                    <div class="subscriber-display">
+                        <span id="subscriber-count">5000</span>
+                    </div>
+
+                    <div class="slider-container">
+                        <span class="limit-label left">1000</span>
+                        <input type="range" min="1000" max="100000" step="1000" value="5000" class="slider"
+                            id="subscriber-slider">
+                        <span class="limit-label right">100 тыс.+</span>
+                    </div>
+
+                    <p class="contact-hint">Если у вас более 100 тыс. подписчиков, свяжитесь с нами.</p>
+                </div>
+
+                <!-- Right/Bottom Light Panel -->
+                <div class="card-panel light-panel">
+                    <div class="price-display">
+                        <span class="amount" id="price-amount">150 рублей</span>
+                        <span class="period">в месяц</span>
+                    </div>
+
+                    <h3 class="features-title">План включает в себя</h3>
+                    <ul class="features-list">
+                        <li>300 поколений изображений</li>
+                        <li>2000 Кредиты</li>
+                        <li>Ежемесячно 1000 кредитов бесплатно</li>
+                        <li>Поддержка клиентов</li>
+                        <li>Выделенный сервер</li>
+                        <li>Приоритетные поколения</li>
+                    </ul>
+
+                    <button class="cta-button">Начать</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Lab 7 Implementation. Все права защищены.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
