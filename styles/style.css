@@ -1,0 +1,280 @@
+:root {
+    --bg-color: #1a2b56;
+    /* Deep Blue Background */
+    --card-dark: #0f1c3f;
+    /* Darker Blue for left panel */
+    --card-light: #ffffff;
+    --accent-color: #2d60ff;
+    /* Bright Blue for Slider/Buttons */
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-gray: #718096;
+    --font-main: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    /* Matches the outer background in screens */
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.view-select-label {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#view-select {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Main Content */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.pricing-section {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+.pricing-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-subtitle {
+    color: #cbd5e0;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* Pricing Card Container */
+.pricing-card {
+    display: flex;
+    /* Default Desktop */
+    background-color: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Panels */
+.card-panel {
+    padding: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dark-panel {
+    background-color: var(--card-dark);
+    color: white;
+    text-align: center;
+}
+
+.light-panel {
+    background-color: var(--card-light);
+    color: var(--text-dark);
+    text-align: left;
+}
+
+/* Left/Top Panel Elements */
+.panel-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.subscriber-display {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    align-self: center;
+}
+
+.slider-container {
+    margin: 2rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.slider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #4a5568;
+    border-radius: 5px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.limit-label {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.contact-hint {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-top: 1rem;
+}
+
+/* Right/Bottom Panel Elements */
+.price-display {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin-left: 0.5rem;
+}
+
+.features-title {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.features-list li {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+}
+
+.features-list li::before {
+    content: "✔";
+    color: #38a169;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.cta-button {
+    background-color: var(--card-dark);
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #1a2b56;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* ========================================= */
+/* RESPONSIVE & VIEW SWITCHING LOGIC         */
+/* ========================================= */
+
+/* Mobile Styling Applied via Class or Media Query */
+/* We define a mixin-like block using CSS variables or just cascading logic */
+
+/* Define what "Mobile" looks like */
+.mobile-layout .pricing-card {
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.mobile-layout .features-list {
+    grid-template-columns: 1fr;
+}
+
+/* Define what "Desktop" looks like (Default, but reinforced) */
+.desktop-layout .pricing-card {
+    flex-direction: row;
+    max-width: 1000px;
+}
+
+/* AUTO MODE: Use Media Queries */
+@media (max-width: 768px) {
+
+    /* If body has 'auto-layout' (default), apply mobile styles here */
+    body.auto-layout .pricing-card {
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    body.auto-layout .features-list {
+        grid-template-columns: 1fr;
+    }
+}
